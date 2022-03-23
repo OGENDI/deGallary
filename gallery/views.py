@@ -17,8 +17,8 @@ def photos(request):
     return render(request, 'gallery.html',{"gallery":my_gallery})
 
 def search(request):
-    if 'category_name' in request.GET and request.GET['category_name']:
-        search_name = request.GET.get('category_name')
+    if 'category' in request.GET and request.GET['category']:
+        search_name = request.GET.get('category')
         search_images = Image.search_image_by_cat(search_name)
 
         print(search_name)

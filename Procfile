@@ -1,1 +1,1 @@
-web: gunicorn degallery.wsgi
+web: gunicorn degallery.wsgi --log-file -

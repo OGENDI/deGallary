@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{block.super}}
+   <main class="home py-2" >
+    <div class="d-flex small justify-content-center align-items-center position">
+        <img src="{% static 'images/about.svg' %}" style="height:84vh; width:100%" class="img-fluid" alt="svg image illustrates about me" data-aos="fade-left" data-aos-duration="1000">
+        <div class="text-center text-dark" data-aos="fade-left" data-aos-duration="1000">
+            <H4 class="display-3 fw-bolder" data-aos="fade-left" data-aos-duration="4000">{{aboutme}}</H4>
+            <p class="display-6">
+                An equal platform for all photographic enthusias.
+            </p>
+        </div>
+    </div>
+   </main>
+{% endblock %}

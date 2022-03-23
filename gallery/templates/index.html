@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{block.super}}
+   <main class="home " >
+    <div class="position-relative">
+        <img src="{% static 'images/banner.png' %}" style="height:84vh; width:100%" class="img-fluid" alt="">
+        <h1 class="position-absolute welcome display-1 fw-bolder text-center px-5" data-aos="fade-left" data-aos-duration="3000">
+
+            Photos are living testimonies of life.
+        </h1>
+    </div>
+   </main>
+{% endblock %}

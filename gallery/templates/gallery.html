@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{block.super}}
+   <main class="home container-fluid " >
+    <div class="d-flex justify-content-around flex-wrap" >
+        {% for photo in photos %}       
+        
+            
+            <button type="button" class="btn img-size " data-bs-toggle="modal" data-bs-target="#image{{gal.id}}" data-aos="zoom-in-up" data-aos-duration="1000">
+                <img src="{{gal.image.url}}" class="img-fluid" alt="Image">
+            </button>
+            
+            <!-- pop up -->
+            <div class="modal  fade" id="image{{photo.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">{{ gal.name_of_image }}</h5>
+                    <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{photo.image.url}}" class="img-fluid" alt="Image">
+                        <p>
+                            {{photo.image_description}}
+                        </p>
+                        <div class="d-flex">
+                            <h4>Category: {{photo.category}} &nbsp;</h4>
+                            <h4> &nbsp; Located in: {{photo.location}}</h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                    </div>
+                </div>
+                </div>
+            </div>
+        {% empty %}
+        <h2>Gallery is empty!! Search to view the images</h2> 
+        {% endfor %}         
+    </div>
+   </main>
+{% endblock %}

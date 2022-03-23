@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{block.super}}
+   <main class="home py-2" style="background-color:rgb(108, 107, 167)" >
+    <div class="d-flex small  justify-content-center align-items-center">
+        <div class="text-white text-center m-2  position-relative " style="height:30vh" data-aos="fade-down" data-aos-easing="linear"   data-aos-duration="1500">
+            <h2 class="display-3 p-5 d-flex align-items-center">{{contact}}</h2>
+        </div>
+        <div  class=" text-dark" data-aos="fade-down" data-aos-easing="linear"   data-aos-duration="1500">
+            <p class="display-6 p-4" >
+                Mobile.no:   +254702560119<br>
+                          Mail.to: <strong>ogendi18@gmail.com</strong><br>
+                          Nairobi, <br>        
+                          Kenya.<br>
+        </div>
+    </div>
+   </main>
+{% endblock %}
